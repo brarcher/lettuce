@@ -3,7 +3,7 @@ all: check_dependencies unit functional doctest
 filename=lettuce-`python -c 'import lettuce;print lettuce.version'`.tar.gz
 
 export PYTHONPATH:= ${PWD}
-export LETTUCE_DEPENDENCIES:= nose mox sphinx lxml django fuzzywuzzy mock
+export LETTUCE_DEPENDENCIES:= nose mox sphinx lxml django fuzzywuzzy mock python-subunit sure
 
 check_dependencies:
 	@echo "Checking for dependencies to run tests ..."
