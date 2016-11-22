@@ -527,6 +527,18 @@ def test_scenario_matches_tags_excluding_when_scenario_has_no_tags():
 
     assert scenario.matches_tags(['-nope', '-neither'])
 
+def test_scenario_matches_tags_both_include_and_exclude_tags():
+    ("When Scenario#matches_tags is called for a scenario "
+     "that has an inclusionary and exclusionary tag that matches, "
+     "the scenario is excluded")
+
+    scenario = Scenario.from_string(
+        SCENARIO1,
+        original_string=SCENARIO1.strip(),
+        tags=['tag1', 'tag2'])
+
+    assert not scenario.matches_tags(['tag1', '-tag2'])
+
 
 def test_scenario_matches_tags_excluding_fuzzywuzzy():
     ("When Scenario#matches_tags is called with a member starting with -~ "
