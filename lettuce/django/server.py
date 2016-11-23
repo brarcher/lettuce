@@ -194,7 +194,7 @@ class ThreadedServer(multiprocessing.Process):
             httpd_cls = WSGIServer
 
         try:
-            s = connector.connect((self.address, self.port))
+            connector.connect((self.address, self.port))
             self.lock.release()
             os.kill(os.getpid(), 9)
         except socket.error:
