@@ -19,7 +19,6 @@ from datetime import datetime, timedelta
 from lettuce.terrain import after
 from lettuce.terrain import before
 from xml.dom import minidom
-from lettuce.strings import utf8_string
 
 
 def wrt_output(filename, content):
